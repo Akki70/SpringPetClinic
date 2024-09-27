@@ -1,5 +1,5 @@
 pipeline{
-    agent{label 'node'}
+    agent any
     tools{maven 'M3'}
     stages{
         stage('Checkout'){
@@ -25,7 +25,7 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                sh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
+                sh 'java -jar /home/coder/.jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
             }
         }
     }
